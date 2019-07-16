@@ -10,8 +10,12 @@ services:
   api:
     image: 'adibaulia/devconnector-api'
     depends_on: 
-      - 'mongo' 
+      - 'mongo'
     ports:
       - '5000:5000'
+    environment: 
+      NODE_ENV: "production"
+      MONGO_URI: "mongodb://mongo:27017/devconnector"
+      SECRET_OR_KEY: 'secret'
   client:
     image: 'adibaulia/devconnector-client'
