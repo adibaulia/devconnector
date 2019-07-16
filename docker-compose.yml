@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo:
+    image: 'mongo:latest'
+  nginx:
+    restart: always
+    image: 'adibaulia/devconnector-nginx'
+    ports:
+      - '80:80'
+  api:
+    image: 'adibaulia/devconnector-api'
+    ports:
+      - '5000:5000'
+  client:
+    image: 'adibaulia/devconnector-client'  
